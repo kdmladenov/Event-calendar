@@ -1,0 +1,86 @@
+.monthly-small-calendar {
+  width: fit-content;
+  gap: 0;
+}
+
+.monthly-small-calendar ul.weekdays,
+.monthly-small-calendar ul.days {
+  display: grid;
+  width: fit-content;
+  grid-template-columns: 30px 30px 30px 30px 30px 30px 30px;
+  grid-auto-rows: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.monthly-small-calendar ul.weekdays {
+  height: 30px;
+  font-size: 20px;
+}
+.monthly-small-calendar ul.days {
+  height: 190px;
+}
+
+.monthly-small-calendar ul.weekdays li {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  color: lightgray;
+}
+
+/* Days */
+.monthly-small-calendar ul.days li {
+  width: 30px;
+  height: 30px;
+  gap: 1px;
+}
+
+.monthly-small-calendar ul.days li button {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  padding: 3px;
+  margin: 0;
+  font-weight: bold;
+  color: lightgray;
+}
+
+.monthly-small-calendar ul.days li button:hover {
+  cursor: pointer;
+}
+
+.monthly-small-calendar ul.days li.today.selected button {
+  color: white;
+  background-color: red;
+}
+
+.monthly-small-calendar ul.days li.today:not(.selected) button {
+  color: red;
+}
+
+.monthly-small-calendar ul.days li:not(.today).selected button {
+  color: white;
+  background-color: black;
+}
+
+.monthly-small-calendar ul.days li.current-month button {
+  color: black;
+}
+@media (max-width: 480px) {
+  .monthly-small-calendar ul.weekdays,
+  .monthly-small-calendar ul.days {
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px;
+    grid-auto-rows: 40px;
+  }
+  .monthly-small-calendar ul.days li {
+    width: 50px;
+    height: 40px;
+  }
+  .monthly-small-calendar ul.days li button {
+    width: 50px;
+    height: 35px;
+    font-size: 20px;
+  }
+}
