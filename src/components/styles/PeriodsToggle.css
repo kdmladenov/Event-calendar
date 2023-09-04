@@ -1,0 +1,25 @@
+.periods-toggle {
+  height: 30px;
+  width: 200px;
+  gap: 0;
+  box-shadow: 2px 2px 10px lightgray;
+  border: 1px solid rgb(247, 244, 244);
+  border-radius: 5px;
+}
+
+.periods-toggle button {
+  
+  height: 30px;
+  width: 50px;
+  border: none;
+  background-color: transparent;
+  padding: 0 10px;
+}
+
+.periods-toggle button.selected {
+  box-shadow: 2px 2px 10px lightgray;
+  border: 1px solid rgb(223, 222, 222);
+  border-radius: 5px;
+  background-color: rgb(239, 252, 252);
+  font-weight: bold;
+}
