@@ -12,20 +12,23 @@ const App = () => {
   const today = endOfToday();
   const [selectedDate, setSelectedDate] = useState(today);
   const [currentDate, setCurrentDate] = useState(today);
-  const [periods, setPeriods] = useState('months');
+  const [periods, setPeriods] = useState('days');
+
 
   return (
     <div className="calendar flex fc">
-      <PeriodsToggle periods={periods} setPeriods={setPeriods} />
-      <div className="header flex space-b">
-        <h2>{format(currentDate, periods === 'years' ? 'yyyy' : 'MMM yyyy')}</h2>
-        <ButtonGroup
-          currentDate={currentDate}
-          setCurrentDate={setCurrentDate}
-          setSelectedDate={setSelectedDate}
-          periods={periods}
-        />
-      </div>
+      <header className=" flex fc">
+        <PeriodsToggle periods={periods} setPeriods={setPeriods} />
+        <div className="header flex space-b">
+          <h2>{format(currentDate, periods === 'years' ? 'yyyy' : 'MMM yyyy')}</h2>
+          <ButtonGroup
+            currentDate={currentDate}
+            setCurrentDate={setCurrentDate}
+            setSelectedDate={setSelectedDate}
+            periods={periods}
+          />
+        </div>
+      </header>
       {periods === 'days' ? (
         <DailyCalendar currentDate={currentDate} setSelectedDate={setSelectedDate} />
       ) : periods === 'weeks' ? (
